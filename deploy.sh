@@ -6,7 +6,7 @@ elm-package install --yes
 elm-make --yes
 
 mkdir out
-mv ll1.html out
+mv index.html out
 elm-make Main.elm --output out/ll1.js --yes
 cd out
 
