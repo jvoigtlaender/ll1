@@ -4,8 +4,8 @@ elm-package install --yes
 elm-make --yes
 
 mkdir out
-mv index.html out
-elm-make Main.elm --output out/ll1.js --yes
+mv src/index.html out
+elm-make src/Main.elm --output out/ll1.js --yes
 cd out
 
 git init
