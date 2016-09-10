@@ -8,6 +8,7 @@ Demonstrating LL(1) analysis of context free grammars.
 Play with it [here](https://jvoigtlaender.github.io/ll1).
 
 Demo:
+-----
 
 ![LL(1) Demo](demo.gif)
 
