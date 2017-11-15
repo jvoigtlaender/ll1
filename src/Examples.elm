@@ -125,7 +125,7 @@ cfg_left_associative_arith_norec =
         , ( "Exp'", [ ] )
         , ( "Term", [ NT "Factor", NT "Term'" ] )
         , ( "Term'", [ T "*", NT "Factor", NT "Term'" ] )
-        , ( "Term", [ ] )
+        , ( "Term'", [ ] )
         , ( "Factor", [ T "int" ] )
         , ( "Factor", [ T "(", NT "Exp", T ")" ] )
         ]
