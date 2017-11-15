@@ -5,6 +5,7 @@ module Examples
     , cfg_8_7
     , cfg_8_9
     , cfg_exam
+    , cfg_left_associative_arith
     , cfg_arith
     , cfg_arith_mod
     , cfg_arith_simpl
@@ -96,6 +97,20 @@ cfg_exam =
         , ( "B", [ T "b", NT "B'" ] )
         , ( "B'", [] )
         , ( "B'", [ T "b", NT "B'" ] )
+        ]
+
+
+cfg_left_associative_arith =
+    CFG
+        "Exp"
+        [ "Term", "Factor" ]
+        [ "+", "*", "(", ")", "int" ]
+        [ ( "Exp", [ NT "Exp", T "+", NT "Term" ] )
+        , ( "Exp", [ NT "Term" ] )
+        , ( "Term", [ NT "Term", T "*", NT "Factor" ] )
+        , ( "Term", [ NT "Factor" ] )
+        , ( "Factor", [ T "int" ] )
+        , ( "Factor", [ T "(", NT "Exp", T ")" ] )
         ]
 
 

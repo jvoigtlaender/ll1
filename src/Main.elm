@@ -21,6 +21,7 @@ choices =
     [ ( "zur Übungsaufgabe", Examples.cfg_exercise )
     , ( "aus Textbuch", Examples.cfg_8_7 )
     , ( "aus Textbuch, Variante", Examples.cfg_8_9 )
+    , ( "Arithmetik", Examples.cfg_left_associative_arith )
     , ( "Einführungsbeispiel", Examples.cfg_arith )
     , ( "Einführungsbeispiel, linksfaktorisiert", Examples.cfg_arith_mod )
     , ( "vereinfachtes Beispiel", Examples.cfg_arith_simpl )
