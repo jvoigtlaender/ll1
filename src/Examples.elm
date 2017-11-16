@@ -105,8 +105,8 @@ cfg_left_associative_arith =
     CFG
         "Exp"
         [ "Term", "Factor" ]
-        [ "+", "*", "(", ")", "int" ]
-        [ ( "Exp", [ NT "Exp", T "+", NT "Term" ] )
+        [ "-", "*", "(", ")", "int" ]
+        [ ( "Exp", [ NT "Exp", T "-", NT "Term" ] )
         , ( "Exp", [ NT "Term" ] )
         , ( "Term", [ NT "Term", T "*", NT "Factor" ] )
         , ( "Term", [ NT "Factor" ] )
@@ -119,9 +119,9 @@ cfg_left_associative_arith_norec =
     CFG
         "Exp"
         [ "Exp'", "Term", "Term'", "Factor" ]
-        [ "+", "*", "(", ")", "int" ]
+        [ "-", "*", "(", ")", "int" ]
         [ ( "Exp", [ NT "Term", NT "Exp'" ] )
-        , ( "Exp'", [ T "+", NT "Term", NT "Exp'" ] )
+        , ( "Exp'", [ T "-", NT "Term", NT "Exp'" ] )
         , ( "Exp'", [ ] )
         , ( "Term", [ NT "Factor", NT "Term'" ] )
         , ( "Term'", [ T "*", NT "Factor", NT "Term'" ] )
