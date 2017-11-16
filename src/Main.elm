@@ -23,6 +23,8 @@ choices =
     , ( "aus Textbuch, Variante", Examples.cfg_8_9 )
     , ( "Arithmetik", Examples.cfg_left_associative_arith )
     , ( "Arithmetik, Linksrekursion entfernt", Examples.cfg_left_associative_arith_norec )
+    , ( "Session-Beispiel", Examples.cfg_8_9_no_eps )
+    , ( "Session-Beispiel, linksfaktorisiert", Examples.cfg_8_9_no_eps_mod )
     , ( "Einführungsbeispiel", Examples.cfg_arith )
     , ( "Einführungsbeispiel, linksfaktorisiert", Examples.cfg_arith_mod )
     , ( "vereinfachtes Beispiel", Examples.cfg_arith_simpl )
