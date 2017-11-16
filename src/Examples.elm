@@ -4,6 +4,8 @@ module Examples
     , cfg_exercise
     , cfg_8_7
     , cfg_8_9
+    , cfg_8_9_no_eps
+    , cfg_8_9_no_mod
     , cfg_exam
     , cfg_left_associative_arith
     , cfg_left_associative_arith_norec
@@ -82,6 +84,37 @@ cfg_8_9 =
         , ( "Session", [ T "(", NT "Session", T ")", NT "Session" ] )
         , ( "Facts", [ NT "Fact", NT "Facts" ] )
         , ( "Facts", [] )
+        , ( "Fact", [ T "!", T "STRING" ] )
+        , ( "Question", [ T "?", T "STRING" ] )
+        ]
+
+
+cfg_8_9_no_eps =
+    CFG
+        "Session"
+        [ "Facts", "Fact", "Question" ]
+        [ "(", ")", "!", "?", "STRING" ]
+        [ ( "Session", [ NT "Facts", NT "Question" ] )
+        , ( "Session", [ NT "Question" ] )
+        , ( "Session", [ T "(", NT "Session", T ")", NT "Session" ] )
+        , ( "Facts", [ NT "Fact", NT "Facts" ] )
+        , ( "Facts", [ NT "Fact" ] )
+        , ( "Fact", [ T "!", T "STRING" ] )
+        , ( "Question", [ T "?", T "STRING" ] )
+        ]
+
+
+cfg_8_9_no_eps_mod =
+    CFG
+        "Session"
+        [ "Facts", "Facts'", "Fact", "Question" ]
+        [ "(", ")", "!", "?", "STRING" ]
+        [ ( "Session", [ NT "Facts", NT "Question" ] )
+        , ( "Session", [ NT "Question" ] )
+        , ( "Session", [ T "(", NT "Session", T ")", NT "Session" ] )
+        , ( "Facts", [ NT "Fact", NT "Facts'" ] )
+        , ( "Facts'", [ NT "Facts" ] )
+        , ( "Facts'", [ ] )
         , ( "Fact", [ T "!", T "STRING" ] )
         , ( "Question", [ T "?", T "STRING" ] )
         ]
