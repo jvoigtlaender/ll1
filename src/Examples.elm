@@ -14,6 +14,7 @@ module Examples
     , cfg_arith_simpl
     , cfg_arith_simpl_mod
     , cfg_arith_simpl_mod_norec
+    , cfg_lr
     ) where
 
 import LL exposing (CFG(..), Symbol(..))
@@ -230,4 +231,17 @@ cfg_arith_simpl_mod_norec =
         , ( "E''", [] )
         , ( "E'", [ T "+", NT "E" ] )
         , ( "E'", [ T "*", NT "E" ] )
+        ]
+
+cfg_lr =
+    CFG
+        "Exp'"
+        [ "Exp", "Term" ]
+        [ "+", "-", "num", "(", ")" ]
+        [ ( "Exp'", [ NT "Exp" ] )
+        , ( "Exp", [ NT "Exp", T "+", NT "Term" ] )
+        , ( "Exp", [ NT "Exp", T "-", NT "Term" ] )
+        , ( "Exp", [ NT "Term" ] )
+        , ( "Term", [ T "num" ] )
+        , ( "Term", [ T "(", NT "Exp", T ")" ] )
         ]
