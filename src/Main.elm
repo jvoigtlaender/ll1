@@ -48,7 +48,7 @@ init =
 
 view address { previous, component, next } =
     Html.div [] <|
-        [ Html.h3 [ property "innerHTML" <| string "LL(1)-Grammatiken" ] []
+        [ Html.h3 [ property "innerHTML" <| string "LL(1)-Analyse" ] []
         , Html.select
             [ id "choices", on "change" (at [ "target", "selectedIndex" ] int) (Signal.message address << Switch) ]
             (List.map (\( name, _ ) -> Html.option [] [ Html.text name ]) choices)
