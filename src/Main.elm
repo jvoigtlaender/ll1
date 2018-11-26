@@ -32,7 +32,8 @@ choices =
     , ( "vereinfachtes Beispiel, linksfaktorisiert, keine Linksrekursion", Examples.cfg_arith_simpl_mod_norec )
     , ( "fast triviales Beispiel", Examples.cfg_8_4 )
     , ( "zur Klausuraufgabe", Examples.cfg_exam )
-    , ( "LR-Beispiel", Examples.cfg_lr )
+    , ( "LR-Beispiel aus Vorlesung", Examples.cfg_lr_lecture )
+    , ( "LR-Beispiel aus Übung", Examples.cfg_lr_exercise )
     ]
 
 
