@@ -1,0 +1,25 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Demonstration LL(1)-Analyse</title>
+    <style>
+      html,head,body { padding:0; margin:0; }
+      body { font-family: calibri, helvetica, arial, sans-serif; }
+    </style>
+    <script type="text/javascript" src="ll1.js"></script>
+  </head>
+
+  <body>
+    <div id="main" />
+  </body>
+
+  <script type="text/javascript">
+    var elmDiv = document.getElementById('main');
+    var elmInstance = Elm.embed(Elm.Main, elmDiv, { });
+    function focusStep() { setTimeout(function () { document.getElementById('step').focus(); }, 30); };
+    elmInstance.ports.switched.subscribe(function () { document.getElementById('choices').blur(); focusStep(); });
+    elmInstance.ports.focusStep.subscribe(focusStep);
+  </script>
+
+</html>
