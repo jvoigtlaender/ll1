@@ -16,6 +16,7 @@ module Examples
     , cfg_arith_simpl_mod_norec
     , cfg_lr_lecture
     , cfg_lr_exercise
+    , cfg_postfix_exercise
     ) where
 
 import LL exposing (CFG(..), Symbol(..))
@@ -257,4 +258,16 @@ cfg_lr_exercise =
         , ( "Exp", [ NT "Term" ] )
         , ( "Term", [ T "num" ] )
         , ( "Term", [ T "(", NT "Exp", T ")" ] )
+        ]
+
+cfg_postfix_exercise =
+    CFG
+        "Exp"
+        [ "Exp'", "Exp''" ]
+        [ "+", "*", "int" ]
+        [ ( "Exp", [ T "int", NT "Exp'" ] )
+        , ( "Exp'", [ NT "Exp", NT "Exp''" ] )
+        , ( "Exp'", [] )
+        , ( "Exp''", [ T "+", NT "Exp'" ] )
+        , ( "Exp''", [ T "*", NT "Exp'" ] )
         ]

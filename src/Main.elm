@@ -34,6 +34,7 @@ choices =
     , ( "zur Klausuraufgabe", Examples.cfg_exam )
     , ( "LR-Beispiel aus Vorlesung", Examples.cfg_lr_lecture )
     , ( "LR-Beispiel aus Übung", Examples.cfg_lr_exercise )
+    , ( "Postfix-Beispiel aus Übung", Examples.cfg_postfix_exercise )
     ]
 
 
